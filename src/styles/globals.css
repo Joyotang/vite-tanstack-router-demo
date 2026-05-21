@@ -1,0 +1,237 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+/* @import "tailwindcss"; */
+/* @import 'tw-animate-css'; */
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  @apply m-0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* 颜色使用说明 */
+/*
+ 背景颜色：--background
+ 前景颜色：--foreground 使用示例: text-foreground 对应 kino-web 中的 text-primary
+ 主要颜色：--primary 使用示例: bg-primary 对应 kino-web 中的 bg-primary
+ 主要前景颜色：--primary-foreground 使用示例: text-primary-foreground 一般用于深色背景中的文本颜色
+ 次要颜色：--secondary
+ 次要前景颜色：--secondary-foreground 使用示例: text-secondary-foreground 对应 kino-web 中的 text-secondary
+ 弱化颜色：--muted
+ 弱化前景颜色：--muted-foreground 使用示例: text-muted-foreground 对应 kino-web 中的 text-tertiary
+*/
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: #1E1E1E;
+  --mask: #1E1E1E;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: #3D66FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: #757575;
+  --accent: #E5E9EF;
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.6035 0.2317 28.29); /* 对应 #EC221F */
+  --destructive-foreground: oklch(0.577 0.245 27.325); /* 对应 #EC221F */
+  --border: oklch(0.92 0.004 286.32);
+  --separator: oklch(0.9702 0 0); /* 对应 #F5F5F5 */
+  --input: oklch(0.8822 0 0); /* 对应 #D8D8D8 */
+  --ring: oklch(0.871 0.006 286.286);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -2px rgba(0, 0, 0, 0.06), 0 3px 10px 2px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -3px rgba(0, 0, 0, 0.09), 0 6px 20px 4px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.871 0.006 286.286);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --mask: #1E1E1E;
+  --card: oklch(0.141 0.005 285.823);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.274 0.006 286.033);
+  --input: oklch(0.274 0.006 286.033);
+  --ring: oklch(0.442 0.017 285.786);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 2px -2px rgba(0, 0, 0, 0.3), 0 3px 10px 2px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 2px 4px -3px rgba(0, 0, 0, 0.35), 0 6px 20px 4px rgba(0, 0, 0, 0.18);
+  --shadow-xl: 0 6px 16px 0 rgba(0, 0, 0, 0.3), 0 3px 6px -4px rgba(0, 0, 0, 0.4), 0 9px 28px 8px rgba(0, 0, 0, 0.2);
+  --sidebar: oklch(0.21 0.006 285.823);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.274 0.006 286.033);
+  --sidebar-ring: oklch(0.442 0.017 285.786);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-blue-gray: #F5F7FA;
+  --color-mask: var(--mask);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-separator: var(--separator);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  
+  /* Blue colors */
+  --color-blue-950: #3D66FF;
+  --color-blue-900: #5075FF;
+  --color-blue-800: #6485FF;
+  --color-blue-700: #7794FF;
+  --color-blue-600: #8BA3FF;
+  --color-blue-500: #9EB2FF;
+  --color-blue-400: #B1C2FF;
+  --color-blue-300: #C5D1FF;
+  --color-blue-200: #D8E0FF;
+  --color-blue-150: #E8EDFF;
+  --color-blue-100: #ECF0FF;
+  
+  /* Green colors */
+  --color-green-950: #18BF66;
+  --color-green-900: #2FC575;
+  --color-green-800: #2FC575;
+  --color-green-700: #5DD294;
+  --color-green-600: #74D9A3;
+  --color-green-500: #8BDFB2;
+  --color-green-400: #A3E5C2;
+  --color-green-300: #BAECD1;
+  --color-green-200: #D1F2E0;
+  --color-green-100: #E8F9F0;
+  
+  /* Yellow colors */
+  --color-yellow-950: #F6C023;
+  --color-yellow-900: #F7C639;
+  --color-yellow-800: #F8CD4F;
+  --color-yellow-700: #F9D365;
+  --color-yellow-600: #FAAD14;
+  --color-yellow-500: #FADF91;
+  --color-yellow-400: #FBE6A7;
+  --color-yellow-300: #FCECBD;
+  --color-yellow-200: #FDF2D3;
+  --color-yellow-100: #FFF5E0;
+  
+  /* Red colors */
+  --color-red-950: #EC221F;
+  --color-red-900: #EE3835;
+  --color-red-850: #F53F3E;
+  --color-red-800: #F04E4C;
+  --color-red-700: #F26462;
+  --color-red-600: #F47A79;
+  --color-red-500: #F5908F;
+  --color-red-400: #F7A7A5;
+  --color-red-300: #F9BDBC;
+  --color-red-200: #FBD3D2;
+  --color-red-100: #FDE9E9;
+  
+  /* Gray colors */
+  --color-gray-950: #757575;
+  --color-gray-900: #838383;
+  --color-gray-800: #919191;
+  --color-gray-700: #9E9E9E;
+  --color-gray-600: #ACACAC;
+  --color-gray-500: #BABABA;
+  --color-gray-400: #C8C8C8;
+  --color-gray-300: #D8D8D8;
+  --color-gray-200: #E3E3E3;
+  --color-gray-100: #F5F5F5;
+  
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-red-md: 0 1px 2px rgba(245, 63, 62, 0.15);
+  --shadow-gray-md: 0 1px 2px rgba(186, 186, 186, 0.15);
+  --shadow-primary-outline: 0 0 0 2px rgba(5, 105, 255, 0.06); /* antd border shadow */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
