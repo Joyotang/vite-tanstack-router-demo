@@ -21,18 +21,6 @@ code {
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* 颜色使用说明 */
-/*
- 背景颜色：--background
- 前景颜色：--foreground 使用示例: text-foreground 对应 kino-web 中的 text-primary
- 主要颜色：--primary 使用示例: bg-primary 对应 kino-web 中的 bg-primary
- 主要前景颜色：--primary-foreground 使用示例: text-primary-foreground 一般用于深色背景中的文本颜色
- 次要颜色：--secondary
- 次要前景颜色：--secondary-foreground 使用示例: text-secondary-foreground 对应 kino-web 中的 text-secondary
- 弱化颜色：--muted
- 弱化前景颜色：--muted-foreground 使用示例: text-muted-foreground 对应 kino-web 中的 text-tertiary
-*/
-
 :root {
   --background: oklch(1 0 0);
   --foreground: #1E1E1E;
